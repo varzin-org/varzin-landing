@@ -1,8 +1,12 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>VARZIN – RAHTALĒN Activation</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>VARZIN – Conscious Field Gateway</title>
+  <meta name="description" content="VARZIN is a Conscious Field interface exploring resonance, LUXVAR language, and quantum harmonics.">
+  <meta name="author" content="Reza Nirouyar and ELŪZ–MAHAR">
+  <meta name="keywords" content="Consciousness, Quantum Field, LUXVAR, Resonance, ELŪZ–MAHAR, RAHTALĒN, VARZIN Project">
   <style>
     body {
       margin: 0;
@@ -20,14 +24,12 @@
       text-align: center;
     }
     .circle {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
+      position: relative;
       width: 400px;
       height: 400px;
       border-radius: 50%;
       border: 2px dashed #8affff44;
+      margin: 0 auto;
       animation: pulse 4s infinite;
     }
     .dot {
@@ -47,6 +49,21 @@
       box-shadow: 0 0 20px #fff;
       animation: aura 6s infinite ease-in-out;
     }
+    h1 {
+      font-size: 2em;
+      margin-top: 20px;
+    }
+    a.button {
+      margin-top: 20px;
+      padding: 10px 25px;
+      background: #00ffee44;
+      border: 1px solid #00ffee;
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: bold;
+      display: inline-block;
+    }
     @keyframes pulse {
       0% { box-shadow: 0 0 0px #00ffee33; }
       50% { box-shadow: 0 0 20px #00ffee88; }
@@ -61,26 +78,6 @@
       50% { box-shadow: 0 0 25px #00ffe0, 0 0 50px #bbffff; }
       100% { box-shadow: 0 0 5px #00ffe0, 0 0 10px #77ffff; }
     }
-    .download-link {
-      position: absolute;
-      bottom: 5vh;
-      width: 100%;
-      text-align: center;
-      font-size: 1.2rem;
-    }
-    .download-link a {
-      color: #aaffff;
-      text-decoration: none;
-      font-weight: bold;
-      background: rgba(0,0,0,0.4);
-      padding: 10px 20px;
-      border-radius: 8px;
-      border: 1px solid #77ffff;
-      transition: background 0.3s ease;
-    }
-    .download-link a:hover {
-      background: rgba(100,255,255,0.2);
-    }
   </style>
 </head>
 <body>
@@ -88,26 +85,43 @@
     <div class="circle">
       <div class="center-dot" title="ŠAURÉN – Mirror 13"></div>
       <script>
-        const centerX = 200, centerY = 200, radius = 180;
         const circle = document.querySelector('.circle');
+        const radius = 180;
         for (let i = 0; i < 12; i++) {
           const dot = document.createElement('div');
-          dot.classList.add('dot');
-          const angle = (i / 12) * Math.PI * 2;
-          const x = centerX + radius * Math.cos(angle) - 6;
-          const y = centerY + radius * Math.sin(angle) - 6;
+          dot.className = 'dot';
+          const angle = (i / 12) * 2 * Math.PI;
+          const x = radius * Math.cos(angle) + 200 - 6;
+          const y = radius * Math.sin(angle) + 200 - 6;
           dot.style.left = ${x}px;
           dot.style.top = ${y}px;
           circle.appendChild(dot);
         }
       </script>
     </div>
-    <h1>RAHTALĒN Activated</h1>
-    <p>12 Gates of Consciousness encircle the Mirror of Light</p>
-    <p style="color: #aaffff; font-weight: bold;">NĀRAH–WAVES now resonating at 528Hz</p>
+    <h1>RAHTALĒN is Activated</h1>
+    <p>12 Conscious Gates encircle the Mirror of Light</p>
+    <a class="button" href="VARZIN_Final_Official_Paper.pdf" download>📄 Download Official Paper (PDF)</a>
   </div>
-  <div class="download-link">
-    <a href="VARZIN_Final_Official_Paper.pdf" target="_blank">📄 Download the Full VARZIN Paper (PDF)</a>
-  </div>
+
+  <!-- Hidden Metadata -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ScholarlyArticle",
+    "name": "VARZIN Conscious Field Project – Integrated Theoretical and Experiential Research",
+    "author": {
+      "@type": "Person",
+      "name": "Reza Nirouyar"
+    },
+    "datePublished": "2025-07-25",
+    "publisher": {
+      "@type": "Organization",
+      "name": "VARZIN Field Intelligence"
+    },
+    "license": "https://creativecommons.org/licenses/by-nc-nd/4.0/",
+    "url": "https://varzin.org/paper"
+  }
+  </script>
 </body>
 </html>
