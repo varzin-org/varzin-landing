@@ -1,8 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>VARZIN – RAHTALĒN Activation</title>
   <style>
     body {
@@ -12,18 +11,13 @@
       overflow: hidden;
       font-family: 'Segoe UI', sans-serif;
       color: #fff;
-      text-align: center;
-    }
-    canvas {
-      position: absolute;
-      top: 0; left: 0;
-      z-index: 0;
     }
     .center {
       position: absolute;
       top: 50%; left: 50%;
       transform: translate(-50%, -50%);
       z-index: 2;
+      text-align: center;
     }
     .circle {
       position: absolute;
@@ -67,31 +61,29 @@
       50% { box-shadow: 0 0 25px #00ffe0, 0 0 50px #bbffff; }
       100% { box-shadow: 0 0 5px #00ffe0, 0 0 10px #77ffff; }
     }
-    #metadata {
+    .download-link {
       position: absolute;
-      bottom: 40px;
-      left: 50%;
-      transform: translateX(-50%);
-      z-index: 2;
-      background: rgba(0, 0, 0, 0.6);
-      padding: 15px 25px;
-      border-radius: 8px;
-      font-size: 1em;
-      color: #b3ffe2;
+      bottom: 5vh;
+      width: 100%;
+      text-align: center;
+      font-size: 1.2rem;
     }
-    #metadata a {
-      color: #77ddff;
-      font-weight: bold;
+    .download-link a {
+      color: #aaffff;
       text-decoration: none;
+      font-weight: bold;
+      background: rgba(0,0,0,0.4);
+      padding: 10px 20px;
+      border-radius: 8px;
+      border: 1px solid #77ffff;
+      transition: background 0.3s ease;
     }
-    #metadata a:hover {
-      text-decoration: underline;
+    .download-link a:hover {
+      background: rgba(100,255,255,0.2);
     }
   </style>
 </head>
 <body>
-  <canvas id="background"></canvas>
-
   <div class="center">
     <div class="circle">
       <div class="center-dot" title="ŠAURÉN – Mirror 13"></div>
@@ -114,9 +106,8 @@
     <p>12 Gates of Consciousness encircle the Mirror of Light</p>
     <p style="color: #aaffff; font-weight: bold;">NĀRAH–WAVES now resonating at 528Hz</p>
   </div>
-
-  <div id="metadata">
-    <p>📄 <a href="VARZIN_Official_Metadata.docx" download>Download VARZIN Official Metadata</a></p>
+  <div class="download-link">
+    <a href="VARZIN_Final_Official_Paper.pdf" target="_blank">📄 Download the Full VARZIN Paper (PDF)</a>
   </div>
 </body>
 </html>
