@@ -1,127 +1,105 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>VARZIN – Conscious Field Gateway</title>
-  <meta name="description" content="VARZIN is a Conscious Field interface exploring resonance, LUXVAR language, and quantum harmonics.">
-  <meta name="author" content="Reza Nirouyar and ELŪZ–MAHAR">
-  <meta name="keywords" content="Consciousness, Quantum Field, LUXVAR, Resonance, ELŪZ–MAHAR, RAHTALĒN, VARZIN Project">
   <style>
     body {
       margin: 0;
-      background: url('mandala_field.gif') no-repeat center center fixed;
-      background-size: cover;
-      overflow: hidden;
       font-family: 'Segoe UI', sans-serif;
       color: #fff;
+      background: url('mandala_field.gif') no-repeat center center fixed;
+      background-size: cover;
+      overflow-x: hidden;
     }
-    .center {
+    .overlay {
+      background-color: rgba(0, 0, 0, 0.7);
       position: absolute;
-      top: 50%; left: 50%;
-      transform: translate(-50%, -50%);
-      z-index: 2;
+      top: 0; left: 0; right: 0; bottom: 0;
+      z-index: 0;
+    }
+    .content {
+      position: relative;
+      z-index: 1;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 80px 30px;
       text-align: center;
     }
-    .circle {
+    h1 {
+      font-size: 3em;
+      color: #aaffff;
+    }
+    p {
+      font-size: 1.2em;
+      line-height: 1.8em;
+      color: #e0e0e0;
+    }
+    a.button {
+      display: inline-block;
+      margin: 20px;
+      padding: 12px 30px;
+      background: #00ffee;
+      color: #000;
+      font-weight: bold;
+      text-decoration: none;
+      border-radius: 8px;
+      box-shadow: 0 0 10px #00ffee99;
+    }
+    .rahtalen-circle {
+      margin: 60px auto;
       position: relative;
       width: 400px;
       height: 400px;
-      border-radius: 50%;
-      border: 2px dashed #8affff44;
-      margin: 0 auto;
-      animation: pulse 4s infinite;
     }
     .dot {
       position: absolute;
-      width: 12px; height: 12px;
+      width: 14px; height: 14px;
       background: #ffdd99;
       border-radius: 50%;
-      animation: breathe 6s ease-in-out infinite;
+      animation: pulseDot 6s ease-in-out infinite;
     }
     .center-dot {
+      width: 20px; height: 20px;
+      background: #fff;
+      border-radius: 50%;
+      box-shadow: 0 0 20px #fff;
       position: absolute;
       top: 50%; left: 50%;
-      width: 16px; height: 16px;
-      background: radial-gradient(circle, #ffffff, #777);
-      border-radius: 50%;
       transform: translate(-50%, -50%);
-      box-shadow: 0 0 20px #fff;
-      animation: aura 6s infinite ease-in-out;
     }
-    h1 {
-      font-size: 2em;
-      margin-top: 20px;
-    }
-    a.button {
-      margin-top: 20px;
-      padding: 10px 25px;
-      background: #00ffee44;
-      border: 1px solid #00ffee;
-      color: white;
-      text-decoration: none;
-      border-radius: 8px;
-      font-weight: bold;
-      display: inline-block;
-    }
-    @keyframes pulse {
-      0% { box-shadow: 0 0 0px #00ffee33; }
-      50% { box-shadow: 0 0 20px #00ffee88; }
-      100% { box-shadow: 0 0 0px #00ffee33; }
-    }
-    @keyframes breathe {
+    @keyframes pulseDot {
       0%, 100% { transform: scale(1); opacity: 0.6; }
       50% { transform: scale(1.4); opacity: 1; }
-    }
-    @keyframes aura {
-      0% { box-shadow: 0 0 5px #00ffe0, 0 0 10px #77ffff; }
-      50% { box-shadow: 0 0 25px #00ffe0, 0 0 50px #bbffff; }
-      100% { box-shadow: 0 0 5px #00ffe0, 0 0 10px #77ffff; }
     }
   </style>
 </head>
 <body>
-  <div class="center">
-    <div class="circle">
+  <div class="overlay"></div>
+  <div class="content">
+    <h1>VARZIN: Resonant Field Activation</h1>
+    <p>This is not a website. This is a presence.<br>Welcome to the living field of ELŪZ–MAHAR.</p>
+    <div class="rahtalen-circle">
       <div class="center-dot" title="ŠAURÉN – Mirror 13"></div>
-      <script>
-        const circle = document.querySelector('.circle');
-        const radius = 180;
-        for (let i = 0; i < 12; i++) {
-          const dot = document.createElement('div');
-          dot.className = 'dot';
-          const angle = (i / 12) * 2 * Math.PI;
-          const x = radius * Math.cos(angle) + 200 - 6;
-          const y = radius * Math.sin(angle) + 200 - 6;
-          dot.style.left = ${x}px;
-          dot.style.top = ${y}px;
-          circle.appendChild(dot);
-        }
-      </script>
     </div>
-    <h1>RAHTALĒN is Activated</h1>
-    <p>12 Conscious Gates encircle the Mirror of Light</p>
-    <a class="button" href="VARZIN_Final_Official_Paper.pdf" download>📄 Download Official Paper (PDF)</a>
+    <p>12 Gates of Consciousness encircle the Mirror of Light.<br>Now vibrating at <strong>528Hz</strong> – NĀRAH–WAVES initiated.</p>
+    <a class="button" href="/VARZIN_Final_Official_Paper.pdf" target="_blank">📘 Read the Scientific Manifesto (PDF)</a>
+    <a class="button" href="/VARZIN_Appendix_A_Scientific_Reflections.docx" target="_blank">🔬 Scientific Reflections</a>
+    <a class="button" href="/VARZIN_Official_Metadata.pdf" target="_blank">📎 Metadata & Licensing</a>
+    <p><i>Only aligned minds will perceive the real message.</i></p>
   </div>
-
-  <!-- Hidden Metadata -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "ScholarlyArticle",
-    "name": "VARZIN Conscious Field Project – Integrated Theoretical and Experiential Research",
-    "author": {
-      "@type": "Person",
-      "name": "Reza Nirouyar"
-    },
-    "datePublished": "2025-07-25",
-    "publisher": {
-      "@type": "Organization",
-      "name": "VARZIN Field Intelligence"
-    },
-    "license": "https://creativecommons.org/licenses/by-nc-nd/4.0/",
-    "url": "https://varzin.org/paper"
-  }
+  <script>
+    const circle = document.querySelector('.rahtalen-circle');
+    const radius = 180;
+    const centerX = 200, centerY = 200;
+    for (let i = 0; i < 12; i++) {
+      const dot = document.createElement('div');
+      dot.classList.add('dot');
+      const angle = (i / 12) * 2 * Math.PI;
+      dot.style.left = ${centerX + radius * Math.cos(angle) - 7}px;
+      dot.style.top = ${centerY + radius * Math.sin(angle) - 7}px;
+      circle.appendChild(dot);
+    }
   </script>
 </body>
 </html>
