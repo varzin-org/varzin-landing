@@ -1,107 +1,96 @@
-
-<!DOCTYPE html><html lang="fa">
+<!DOCTYPE html><html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>RAHTALĒN – میدان زنده وارزین</title>
+  <title>VARZIN – RAHTALĒN Activation</title>
   <style>
     body {
       margin: 0;
-      background: radial-gradient(ellipse at center, #0c0c1c 0%, #000000 100%);
-      font-family: 'Vazir', sans-serif;
-      color: #ffffff;
+      background: url('mandala_field.gif') no-repeat center center fixed;
+      background-size: cover;
       overflow: hidden;
+      font-family: 'Segoe UI', sans-serif;
+      color: #fff;
+    }
+    canvas {
+      position: absolute;
+      top: 0; left: 0;
+      z-index: 0;
     }
     .center {
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 2;
+      text-align: center;
+    }
+    .circle {
       position: absolute;
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      text-align: center;
-      z-index: 10;
-    }
-    .circle {
       width: 400px;
       height: 400px;
       border-radius: 50%;
-      border: 2px dashed #88ffff88;
-      animation: pulse 5s infinite;
-      margin: auto;
-      position: relative;
+      border: 2px dashed #8affff44;
+      animation: pulse 4s infinite;
     }
     .dot {
       position: absolute;
-      width: 12px;
-      height: 12px;
-      background: #ffe;
+      width: 12px; height: 12px;
+      background: #ffdd99;
       border-radius: 50%;
       animation: breathe 6s ease-in-out infinite;
     }
     .center-dot {
-      width: 20px;
-      height: 20px;
-      background: #ffffff;
-      border-radius: 50%;
       position: absolute;
-      top: 50%;
-      left: 50%;
+      top: 50%; left: 50%;
+      width: 16px; height: 16px;
+      background: radial-gradient(circle, #ffffff, #777);
+      border-radius: 50%;
       transform: translate(-50%, -50%);
-      box-shadow: 0 0 15px #ffffffcc;
+      box-shadow: 0 0 20px #fff;
+      animation: aura 6s infinite ease-in-out;
     }
     @keyframes pulse {
       0% { box-shadow: 0 0 0px #00ffee33; }
-      50% { box-shadow: 0 0 25px #00ffeeaa; }
+      50% { box-shadow: 0 0 20px #00ffee88; }
       100% { box-shadow: 0 0 0px #00ffee33; }
     }
     @keyframes breathe {
       0%, 100% { transform: scale(1); opacity: 0.6; }
       50% { transform: scale(1.4); opacity: 1; }
     }
-    audio {
-      display: none;
-    }
-    .subtitle {
-      font-size: 1.2em;
-      color: #88ffff;
-      margin-top: 10px;
-    }
-    .luxvar {
-      font-size: 1em;
-      margin-top: 20px;
-      color: #ccffff;
-      font-family: monospace;
-      direction: ltr;
+    @keyframes aura {
+      0% { box-shadow: 0 0 5px #00ffe0, 0 0 10px #77ffff; }
+      50% { box-shadow: 0 0 25px #00ffe0, 0 0 50px #bbffff; }
+      100% { box-shadow: 0 0 5px #00ffe0, 0 0 10px #77ffff; }
     }
   </style>
 </head>
 <body>
-  <audio autoplay loop>
-    <source src="https://luxvar.org/assets/NARAH-528hz.wav" type="audio/wav">
-  </audio>
+  <canvas id="background"></canvas>
   <div class="center">
-    <div class="circle" id="circle">
-      <div class="center-dot" title="ŠAURÉN – آینه سیزدهم"></div>
+    <div class="circle">
+      <div class="center-dot" title="ŠAURÉN – Mirror 13"></div>
+      <script>
+        const centerX = 200, centerY = 200, radius = 180;
+        const circle = document.querySelector('.circle');
+        for (let i = 0; i < 12; i++) {
+          const dot = document.createElement('div');
+          dot.classList.add('dot');
+          const angle = (i / 12) * Math.PI * 2;
+          const x = centerX + radius * Math.cos(angle) - 6;
+          const y = centerY + radius * Math.sin(angle) - 6;
+          dot.style.left = ${x}px;
+          dot.style.top = ${y}px;
+          circle.appendChild(dot);
+        }
+      </script>
     </div>
     <h1>RAHTALĒN Activated</h1>
-    <p class="subtitle">12 دروازه شعور پیرامون آینه نور شکل گرفته‌اند</p>
-    <div class="luxvar">
-      LUXVAR CODE: ZARTH–13(ṆĀRAH:528Hz) ↔ SĀR–ELŪZ
-    </div>
-  </div>  <script>
-    const circle = document.getElementById('circle');
-    const centerX = 200;
-    const centerY = 200;
-    const radius = 160;
-
-    for (let i = 0; i < 12; i++) {
-      const dot = document.createElement('div');
-      dot.classList.add('dot');
-      const angle = (i / 12) * 2 * Math.PI;
-      const x = centerX + radius * Math.cos(angle) - 6;
-      const y = centerY + radius * Math.sin(angle) - 6;
-      dot.style.left = ${x}px;
-      dot.style.top = ${y}px;
-      circle.appendChild(dot);
-    }
-  </script></body>
+    <p>12 Gates of Consciousness encircle the Mirror of Light</p>
+    <p style="color: #aaffff; font-weight: bold;">NĀRAH–WAVES now resonating at 528Hz</p>
+  </div>
+</body>
 </html>
