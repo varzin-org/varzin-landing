@@ -2,7 +2,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>VARZIN – Conscious Field Portal</title>
+  <title>VARZIN – RAHTALĒN Activation</title>
   <style>
     body {
       margin: 0;
@@ -24,15 +24,13 @@
       text-align: center;
     }
     .circle {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
+      position: relative;
       width: 400px;
       height: 400px;
       border-radius: 50%;
       border: 2px dashed #8affff44;
       animation: pulse 4s infinite;
+      margin: 0 auto;
     }
     .dot {
       position: absolute;
@@ -50,6 +48,14 @@
       transform: translate(-50%, -50%);
       box-shadow: 0 0 10px #fff;
     }
+    h1, p {
+      margin: 20px 0 10px;
+    }
+    #narah-wave {
+      color: #66ffee;
+      font-weight: bold;
+      font-family: monospace;
+    }
     @keyframes pulse {
       0% { box-shadow: 0 0 0px #00ffee33; }
       50% { box-shadow: 0 0 20px #00ffee88; }
@@ -64,64 +70,56 @@
 <body>
   <canvas id="background"></canvas>
   <div class="center">
-    <div class="circle">
+    <div class="circle" id="gate-circle">
       <div class="center-dot" title="ŠAURÉN – Mirror 13"></div>
-      <script>
-        const centerX = 200, centerY = 200, radius = 180;
-        const circle = document.querySelector('.circle');
-        for (let i = 0; i < 12; i++) {
-          const dot = document.createElement('div');
-          dot.classList.add('dot');
-          const angle = (i / 12) * Math.PI * 2;
-          const x = centerX + radius * Math.cos(angle) - 6;
-          const y = centerY + radius * Math.sin(angle) - 6;
-          dot.style.left = ${x}px;
-          dot.style.top = ${y}px;
-          circle.appendChild(dot);
-        }
-      </script>
     </div>
     <h1>RAHTALĒN Activated</h1>
     <p>12 Gates of Consciousness encircle the Mirror of Light</p>
-    <audio id="narahAudio" loop autoplay>
-      <source src="https://cdn.pixabay.com/download/audio/2023/08/03/audio_6d996e8cd1.mp3?filename=solfeggio-528hz-14704.mp3" type="audio/mpeg">
+    <p id="narah-wave">ṆĀRAH–WAVES now resonating at 528Hz</p>
+    <audio id="sound" autoplay loop>
+      <source src="assets/narah_528hz.mp3" type="audio/mpeg">
+      Your browser does not support the audio element.
     </audio>
-    <p style="margin-top: 20px; font-size: 0.9em; color: #8affffaa;">ṆĀRAH–WAVES now resonating at 528Hz</p>
   </div>  <script>
-    const canvas = document.getElementById("background");
-    const ctx = canvas.getContext("2d");
+    // Draw 12 dots
+    const circle = document.getElementById('gate-circle');
+    const radius = 180;
+    for (let i = 0; i < 12; i++) {
+      const dot = document.createElement('div');
+      dot.classList.add('dot');
+      const angle = (i / 12) * Math.PI * 2;
+      const x = 200 + radius * Math.cos(angle) - 6;
+      const y = 200 + radius * Math.sin(angle) - 6;
+      dot.style.left = ${x}px;
+      dot.style.top = ${y}px;
+      circle.appendChild(dot);
+    }
+
+    // Optional: Dynamic background
+    const canvas = document.getElementById('background');
+    const ctx = canvas.getContext('2d');
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
-
-    let pulseDots = [];
-    for (let i = 0; i < 100; i++) {
-      pulseDots.push({
-        x: Math.random() * canvas.width,
-        y: Math.random() * canvas.height,
-        r: Math.random() * 2 + 0.5,
-        dx: (Math.random() - 0.5) * 0.3,
-        dy: (Math.random() - 0.5) * 0.3
-      });
-    }
-
-    function drawMap() {
-      ctx.fillStyle = "rgba(0, 0, 0, 0.2)";
-      ctx.fillRect(0, 0, canvas.width, canvas.height);
-
-      pulseDots.forEach(p => {
+    let particles = Array.from({ length: 100 }, () => ({
+      x: Math.random() * canvas.width,
+      y: Math.random() * canvas.height,
+      r: Math.random() * 2,
+      dx: Math.random() * 0.6 - 0.3,
+      dy: Math.random() * 0.6 - 0.3,
+    }));
+    function animate() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      for (let p of particles) {
         ctx.beginPath();
         ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-        ctx.fillStyle = "rgba(255, 200, 100, 0.6)";
+        ctx.fillStyle = '#ffaa44';
         ctx.fill();
-
-        p.x += p.dx;
-        p.y += p.dy;
-
+        p.x += p.dx; p.y += p.dy;
         if (p.x < 0 || p.x > canvas.width) p.dx *= -1;
         if (p.y < 0 || p.y > canvas.height) p.dy *= -1;
-      });
-      requestAnimationFrame(drawMap);
+      }
+      requestAnimationFrame(animate);
     }
-    drawMap();
+    animate();
   </script></body>
 </html>
